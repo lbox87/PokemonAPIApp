@@ -16,19 +16,14 @@ function displayResults(responseJson) {
     // if there are previous results, remove them
     console.log(responseJson);
     $('#results-list').empty();
-    // iterate through the items array
-    // for (let i = 0; i < responseJson.data.length; i++) {
-        // for each video object in the items 
-        //array, add a list item to the results 
-        //list with the video title, description,
-        //and thumbnail
-    //     $('#results-list').append(
-    //         `<li><h3>${responseJson.data[i].fullName}</h3>
-    //   <p>${responseJson.data[i].description}</p>
-    //   <a href="${responseJson.data[i].url}">${responseJson.data[i].url}</a>
-    //   </li>`
-    //     )
-    // };
+    $('#results-list').append(`<li><h3>${responseJson.name}</h3></li>`);
+    
+    const sprites = Object.values(responseJson.sprites);
+    console.log(`${sprites}`);
+    
+    for (let i = 0; i < sprites.length; i++) {
+        $('#results-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
+    };
     //display the results section  
     $('#results').removeClass('hidden');
 };
