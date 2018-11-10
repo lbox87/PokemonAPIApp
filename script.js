@@ -33,10 +33,6 @@ function getPokemon(query) {
             }
             throw new Error(response.statusText);
         })
-        // .then(response => {
-        //     response.json();
-        //     console.log(response);
-        // })
         .then(responseJson => displayResults(responseJson))
         .catch(err => {
             console.log(err);
@@ -48,7 +44,6 @@ function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val().toLowerCase();
-        // const maxResults = $('#js-max-results').val();
         getPokemon(searchTerm);
     });
 }
