@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="National Park Service API Project" content="National Park Service API Project">
+    <meta name="Pokemon API Project" content="Pokemon API Project">
 
-    <title>National Park Service API Project</title>
+    <title>Pokemon API Project</title>
 
     <!-- stylesheets -->
     <link href="float-grid.css" rel="stylesheet">
@@ -35,16 +35,13 @@
             <form id="js-form">
                 <label for="search-term">Search term</label>
                 <input type="text" name="search-term" id="js-search-term" required>
-
-                <!-- <label for="max-results">Maximum results to return</label>
-                <input type="number" name="max-results" id="js-max-results" value="10"> -->
-
                 <input type="submit" value="Submit">
             </form>
 
             <p id="js-error-message" class="error-message"></p>
+            
             <section id="results" class="hidden">
-                <h2>Search results</h2>
+                <h2>Search results for: <span class="name-searched"></span></h2>
                 <ul id="results-list">
                 </ul>
             </section>

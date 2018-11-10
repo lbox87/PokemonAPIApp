@@ -1,26 +1,19 @@
-// https://pokeapi.co/api/v2/pokemon
-
 'use strict';
 
-// const apiKey = '1xl6uJG7Qu1IqQpzU77pxeMFeAWRBTpkjFXjtdmy';
 const searchURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
+// const searchURL = "http://pokeapi.co/api/v2/pokemon/";
 
-
-// function formatQueryParams(params) {
-//     const queryItems = Object.keys(params)
-//         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-//     return queryItems.join('&');
-// }
 
 function displayResults(responseJson) {
-    // if there are previous results, remove them
     console.log(responseJson);
+    // if there are previous results, remove them
     $('#results-list').empty();
-    $('#results-list').append(`<li><h3>${responseJson.name}</h3></li>`);
+
+    $('.name-searched').html(`${responseJson.name}`);
     
     const sprites = Object.values(responseJson.sprites);
     console.log(`${sprites}`);
-    
+
     for (let i = 0; i < sprites.length; i++) {
         $('#results-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
     };
@@ -29,12 +22,6 @@ function displayResults(responseJson) {
 };
 
 function getPokemon(query) {
-    // const params = {
-    //     key: apiKey,
-    //     q: query,
-    //     limit: maxResults,
-    // };
-    // const queryString = formatQueryParams(params)
     const url = searchURL + query;
 
     console.log(url);
@@ -60,7 +47,7 @@ function getPokemon(query) {
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
-        const searchTerm = $('#js-search-term').val();
+        const searchTerm = $('#js-search-term').val().toLowerCase();
         // const maxResults = $('#js-max-results').val();
         getPokemon(searchTerm);
     });
