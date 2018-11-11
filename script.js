@@ -6,20 +6,38 @@ const searchURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
 
 function displayResults(responseJson) {
     console.log(responseJson);
+    $('.name-searched').html(`${responseJson.name}`);
+    displaySprites(responseJson);   
+    displayTypes(responseJson); 
+    //display the results section  
+    $('#results').removeClass('hidden');
+};
+
+function displaySprites(responseJson) {
     // if there are previous results, remove them
     $('#sprites-list').empty();
-
-    $('.name-searched').html(`${responseJson.name}`);
-    
+  
     const sprites = Object.values(responseJson.sprites);
     console.log(`${sprites}`);
 
     for (let i = 0; i < sprites.length; i++) {
         $('#sprites-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
     };
-    //display the results section  
-    $('#results').removeClass('hidden');
-};
+}
+
+function displayTypes(responseJson) {
+    $('#pokemon-type').empty();
+    for (let i = 0; i < responseJson.types.length; i++) {
+        console.log($('#pokemon-type').html());
+        if ($('#pokemon-type').html() == "") {
+            $('#pokemon-type').append(`${responseJson.types[i].type.name}`);
+            console.log($('#pokemon-type').html());
+        }
+        else {
+            $('#pokemon-type').append(` & ${responseJson.types[i].type.name}`);
+        }
+    };
+}
 
 function getPokemon(query) {
     const url = searchURL + query;
