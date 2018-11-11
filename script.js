@@ -7,7 +7,7 @@ const searchURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
 function displayResults(responseJson) {
     console.log(responseJson);
     // if there are previous results, remove them
-    $('#results-list').empty();
+    $('#sprites-list').empty();
 
     $('.name-searched').html(`${responseJson.name}`);
     
@@ -15,7 +15,7 @@ function displayResults(responseJson) {
     console.log(`${sprites}`);
 
     for (let i = 0; i < sprites.length; i++) {
-        $('#results-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
+        $('#sprites-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
     };
     //display the results section  
     $('#results').removeClass('hidden');
