@@ -1,7 +1,8 @@
 'use strict';
 
-const searchURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
-// const searchURL = "http://pokeapi.co/api/v2/pokemon/";
+// const searchURL = 'https://pokeapi.salestock.net/api/v2/pokemon/';
+// const searchURL = "https://pokeapi.co/api/v2/pokemon/";
+const searchURL = 'https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/';
 
 
 function displayResults(responseJson) {
