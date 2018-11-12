@@ -9,6 +9,7 @@ function displayResults(responseJson) {
     $('.name-searched').html(`${responseJson.name}`);
     displaySprites(responseJson);   
     displayTypes(responseJson); 
+    displayAbilities(responseJson);
     //display the results section  
     $('#results').removeClass('hidden');
 };
@@ -21,7 +22,7 @@ function displaySprites(responseJson) {
     console.log(`${sprites}`);
 
     for (let i = 0; i < sprites.length; i++) {
-        $('#sprites-list').append(`<li><img src="${sprites[i]}" alt=""></li>`);
+        $('#sprites-list').append(`<li><img id="spites" src="${sprites[i]}" alt=""></li>`);
     };
 }
 
@@ -36,6 +37,13 @@ function displayTypes(responseJson) {
         else {
             $('#pokemon-type').append(` & ${responseJson.types[i].type.name}`);
         }
+    };
+}
+
+function displayAbilities(responseJson) {
+    $('#pokemon-abilities').empty();
+    for (let i = 0; i < responseJson.moves.length; i++) {
+        $('#pokemon-abilities').append(`<li>${responseJson.moves[i].move.name}</li>`);
     };
 }
 
