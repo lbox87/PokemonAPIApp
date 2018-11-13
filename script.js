@@ -47,12 +47,16 @@ function displaySprites(responseJson) {
     // if there are previous results, remove them
     $('#sprites-list').empty();
   
-    const sprites = Object.values(responseJson.sprites);
-    console.log(`${sprites}`);
+    // ---this iterates all sprites, temporarily cut to review or pokemon with many sprites.
+    // const sprites = Object.values(responseJson.sprites);
+    // console.log(`${sprites}`);
 
-    for (let i = 0; i < sprites.length; i++) {
-        $('#sprites-list').append(`<li><img id="spites" src="${sprites[i]}" alt=""></li>`);
-    };
+    // for (let i = 0; i < sprites.length; i++) {
+    //     $('#sprites-list').append(`<li><img id="spites" src="${sprites[i]}" alt=""></li>`);
+    // };
+
+    $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.front_default}" alt=""></li>`);
+    $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.back_default}" alt=""></li>`);
 }
 
 function displayTypes(responseJson) {
