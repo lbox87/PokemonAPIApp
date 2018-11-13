@@ -3,8 +3,9 @@
 // const searchURL = 'https://pokeapi.salestock.net/api/v2/pokemon/';
 // const searchURL = 'https://pokeapi.co/api/v2/pokemon/';
 const searchURL = 'https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/';
+const searchURL2 = 'https://pokeapi-215911.firebaseapp.com/api/v2/move/';
 
-function watchForm() {
+function searchForm() {
     $('form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val().toLowerCase();
@@ -75,4 +76,32 @@ function displayAbilities(responseJson) {
     };
 }
 
-$(watchForm);
+// function hoverMove() {
+//     $('li').mouseover(event => {
+//         const hoverTerm = $('li').val();
+//         getMove(hoverTerm);
+//     });
+// }
+
+// function getMove(query) {
+//     const url = searchURL2 + query;
+
+//     console.log(url);
+
+//     fetch(url)
+//         .then(response => {
+//             if (response.ok) {
+//                 return response.json();
+//             }
+//             console.log(response);
+//             throw new Error(response.statusText);
+//         })
+//         .then(responseJson => console.log(responseJson))
+//         .catch(err => {
+//             console.log(err);
+//             $('#js-error-message').text(`Something went wrong: ${err.message}`);
+//         });
+// }
+
+$(searchForm);
+// $(hoverMove);
