@@ -80,32 +80,35 @@ function displayAbilities(responseJson) {
     };
 }
 
-// function hoverMove() {
-//     $('li').mouseover(event => {
-//         const hoverTerm = $('li').val();
-//         getMove(hoverTerm);
-//     });
-// }
+function hoverMove() {
+    $('ul').on('mouseenter', 'li', event => {
+        // const hoverTerm = $('li').val();
+        const hoverTerm = event.target.textContent
+        // console.log(event.target.textContent)
+        // const hoverTerm = event.target.value;
+        getMove(hoverTerm);
+    });
+}
 
-// function getMove(query) {
-//     const url = searchURL2 + query;
+function getMove(query) {
+    const url = searchURL2 + query;
 
-//     console.log(url);
+    console.log(url);
 
-//     fetch(url)
-//         .then(response => {
-//             if (response.ok) {
-//                 return response.json();
-//             }
-//             console.log(response);
-//             throw new Error(response.statusText);
-//         })
-//         .then(responseJson => console.log(responseJson))
-//         .catch(err => {
-//             console.log(err);
-//             $('#js-error-message').text(`Something went wrong: ${err.message}`);
-//         });
-// }
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            console.log(response);
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => console.log(responseJson))
+        .catch(err => {
+            console.log(err);
+            $('#js-error-message').text(`Something went wrong: ${err.message}`);
+        });
+}
 
 $(searchForm);
-// $(hoverMove);
+$(hoverMove);
