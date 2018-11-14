@@ -24,6 +24,9 @@ function getPokemon(query) {
                 return response.json();
             }
             console.log(response);
+            if (response.statusText == ""){
+                throw new Error("Try Again");
+            }
             throw new Error(response.statusText);
         })
         .then(responseJson => displayResults(responseJson))
