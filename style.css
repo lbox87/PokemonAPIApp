@@ -2,6 +2,10 @@
     border: 1px solid black;
 } */
 
+#sprites-list {
+    margin-top: 0px;
+}
+
 #sprites-list li {
     display:inline-block;
 }
