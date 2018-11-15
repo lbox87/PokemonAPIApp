@@ -1,7 +1,23 @@
+/* * {
+    border: 1px solid black;
+} */
+
 #sprites-list li {
     display:inline-block;
 }
 
 .hidden {
     visibility: hidden; 
+}
+
+.fixed-container {
+    position: fixed;
+    width: 100%;
+    height: 50%;
+}
+
+.ability-container {
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
 }

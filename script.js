@@ -79,7 +79,7 @@ function displaySprites(responseJson) {
 function displayAbilities(responseJson) {
     $('#pokemon-abilities').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
-        $('#pokemon-abilities').append(`<li>${responseJson.moves[i].move.name}</li>`);
+        $('#pokemon-abilities').append(`<li class="col-6">${responseJson.moves[i].move.name}</li>`);
     };
 }
 
