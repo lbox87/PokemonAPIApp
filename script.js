@@ -40,7 +40,7 @@ function displayResults(responseJson) {
     console.log(responseJson);
     $('.name-searched').html(`${responseJson.name}`);
     displaySprites(responseJson);   
-    displayTypes(responseJson); 
+    // displayTypes(responseJson); 
     displayAbilities(responseJson);
     //display the results section  
     $('#results').removeClass('hidden');
@@ -62,19 +62,19 @@ function displaySprites(responseJson) {
     $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.back_default}" alt=""></li>`);
 }
 
-function displayTypes(responseJson) {
-    $('#pokemon-type').empty();
-    for (let i = 0; i < responseJson.types.length; i++) {
-        console.log($('#pokemon-type').html());
-        if ($('#pokemon-type').html() == "") {
-            $('#pokemon-type').append(`${responseJson.types[i].type.name}`);
-            console.log($('#pokemon-type').html());
-        }
-        else {
-            $('#pokemon-type').append(` & ${responseJson.types[i].type.name}`);
-        }
-    };
-}
+// function displayTypes(responseJson) {
+//     $('#pokemon-type').empty();
+//     for (let i = 0; i < responseJson.types.length; i++) {
+//         console.log($('#pokemon-type').html());
+//         if ($('#pokemon-type').html() == "") {
+//             $('#pokemon-type').append(`${responseJson.types[i].type.name}`);
+//             console.log($('#pokemon-type').html());
+//         }
+//         else {
+//             $('#pokemon-type').append(` & ${responseJson.types[i].type.name}`);
+//         }
+//     };
+// }
 
 function displayAbilities(responseJson) {
     $('#pokemon-abilities').empty();
@@ -106,11 +106,15 @@ function getMove(query) {
             console.log(response);
             throw new Error(response.statusText);
         })
-        .then(responseJson => console.log(responseJson))
+        .then(responseJson => displayDescription(responseJson))
         .catch(err => {
             console.log(err);
             $('#js-error-message').text(`Something went wrong: ${err.message}`);
         });
+}
+
+function displayDescription(responseJson){
+    $('.move-description').html(`${responseJson.name}: ${responseJson.effect_entries[0].effect}`);
 }
 
 $(searchForm);
