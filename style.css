@@ -14,10 +14,14 @@
     position: fixed;
     width: 100%;
     height: 50%;
+    z-index:10;
+    background-color:aquamarine;
 }
 
 .ability-container {
     position: absolute;
     top: 50%;
     margin-top: 20px;
+    z-index:5;
+    overflow:auto;
 }
