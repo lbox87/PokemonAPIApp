@@ -117,7 +117,7 @@ function displayDescription(responseJson){
     $('.move-description').html(`
     <span class="col-12">
     <h3>${responseJson.name}:</h3> 
-    ${responseJson.effect_entries[0].effect}
+    ${responseJson.effect_entries[0].short_effect}
     </span>`);
 }
 
