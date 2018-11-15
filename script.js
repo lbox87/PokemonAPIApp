@@ -84,7 +84,7 @@ function displayAbilities(responseJson) {
 }
 
 function hoverMove() {
-    $('ul').on('mouseenter', 'li', event => {
+    $('#pokemon-abilities').on('mouseenter', 'li', event => {
         // const hoverTerm = $('li').val();
         const hoverTerm = event.target.textContent
         // console.log(event.target.textContent)
@@ -119,3 +119,5 @@ function displayDescription(responseJson){
 
 $(searchForm);
 $(hoverMove);
+
+// $('#js-error-message').empty();
