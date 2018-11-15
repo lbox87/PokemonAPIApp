@@ -29,7 +29,7 @@
     </header>
     <main role="main">
 
-        <div class="container">
+        <div class="fixed-container">
             <h1>Pokemon Finder</h1>
 
             <form id="js-form">
@@ -39,12 +39,22 @@
             </form>
 
             <p id="js-error-message" class="error-message"></p>
-            
-            <section id="results" class="hidden">
+
+            <section class="results hidden">
                 <h2>Search results for: <span class="name-searched"></span></h2>
                 <ul id="sprites-list"></ul>
                 <p><span class="move-description">Hover over an ability.</span></p>
-                <ul id="pokemon-abilities"><h2><span class="name-searched"></span> can learn the following abilities:</h2></ul>
+            </section>
+            
+        </div>
+
+        <div class="ability-container">
+            <section class="results hidden">
+
+                <ul id="pokemon-abilities">
+                    <h2><span class="name-searched"></span> can learn the following abilities:</h2>
+                </ul>
+
             </section>
         </div>
 

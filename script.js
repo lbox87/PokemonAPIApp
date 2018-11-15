@@ -43,7 +43,7 @@ function displayResults(responseJson) {
     // displayTypes(responseJson); 
     displayAbilities(responseJson);
     //display the results section  
-    $('#results').removeClass('hidden');
+    $('.results').removeClass('hidden');
 };
 
 function displaySprites(responseJson) {
@@ -114,7 +114,7 @@ function getMove(query) {
 }
 
 function displayDescription(responseJson){
-    $('.move-description').html(`${responseJson.name}: ${responseJson.effect_entries[0].effect}`);
+    $('.move-description').html(`<h3>${responseJson.name}:</h3> ${responseJson.effect_entries[0].effect}`);
 }
 
 $(searchForm);
