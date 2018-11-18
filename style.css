@@ -2,8 +2,17 @@
     border: 1px solid black;
 } */
 
+html {
+    box-sizing:border-box;
+}
+
+*,*:before,*:after{
+    box-sizing:inherit;
+}
+
 #sprites-list {
-    margin-top: 0px;
+    margin: 0px;
+    padding-left: 0px;
 }
 
 #sprites-list li {
@@ -16,8 +25,11 @@
 
 .fixed-container {
     position: fixed;
+    text-align: center;
     width: 100%;
     height: 50%;
+    left:50%;
+    transform: translate(-50%, 0);
     z-index:10;
     background-color:aquamarine;
 }
