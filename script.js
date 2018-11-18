@@ -44,6 +44,8 @@ function displayResults(responseJson) {
     displayAbilities(responseJson);
     //display the results section  
     $('.results').removeClass('hidden');
+    console.log(`testing flow`);
+    clearError();
 };
 
 function displaySprites(responseJson) {
@@ -110,6 +112,7 @@ function getMove(query) {
         .catch(err => {
             console.log(err);
             $('#js-error-message').text(`Something went wrong: ${err.message}`);
+            // $('#js-error-message').removeClass(`hidden`);
         });
 }
 
@@ -124,4 +127,7 @@ function displayDescription(responseJson){
 $(searchForm);
 $(hoverMove);
 
-// $('#js-error-message').empty();
+function clearError() {
+    $('#js-error-message').html('');
+    // $('#js-error-message').addClass(`hidden`);
+}
