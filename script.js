@@ -38,7 +38,8 @@ function getPokemon(query) {
 
 function displayResults(responseJson) {
     console.log(responseJson);
-    $('.name-searched').html(`${responseJson.name}`);
+    // $('.name-searched').html(`${responseJson.name}`);
+    nameSearched(responseJson);
     displaySprites(responseJson);   
     // displayTypes(responseJson); 
     displayAbilities(responseJson);
@@ -47,6 +48,13 @@ function displayResults(responseJson) {
     console.log(`testing flow`);
     clearError();
 };
+
+function nameSearched(responseJson) {
+    $('.name-searched').html(`${responseJson.name}`);
+    let pokemonNameLower = responseJson.name;
+    let pokemonNameStyled = pokemonNameLower.charAt(0).toUpperCase() + pokemonNameLower.slice(1);
+    $('.name-searched').html(`${pokemonNameStyled}`);
+}
 
 function displaySprites(responseJson) {
     // if there are previous results, remove them
