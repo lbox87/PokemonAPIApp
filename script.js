@@ -91,7 +91,7 @@ function displayAbilities(responseJson) {
     // console.log(`${organizeMoves(responseJson)[0]}`);
     $('#pokemon-abilities').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
-        $('#pokemon-abilities').append(`<li class="col-6">${organizeMoves(responseJson)[i]}</li>`);
+        $('#pokemon-abilities').append(`<li class="col-6 pokemon-moves">${organizeMoves(responseJson)[i]}</li>`);
     };
 }
 
@@ -128,10 +128,10 @@ function getMove(query) {
 
 function displayDescription(responseJson){
     $('.move-description').html(`
-    <span class="move-description col-12">
+    <p class="move-description col-12">
     <h2>${responseJson.name}:</h2> 
     ${responseJson.effect_entries[0].short_effect}
-    </span>`);
+    </p>`);
 }
 
 function organizeMoves(responseJson){

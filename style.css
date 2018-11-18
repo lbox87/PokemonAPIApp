@@ -27,6 +27,11 @@ h2, .move-description, label, li, .error-message {
     margin-top: 10px;
 }
 
+.pokemon-moves {
+    margin-top: 5px;
+    border: dotted .5px black;
+}
+
 #pokemon-abilities{
     list-style-type: none;
 }
