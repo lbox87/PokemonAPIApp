@@ -31,7 +31,11 @@ html {
     left:50%;
     transform: translate(-50%, 0);
     z-index:10;
-    background-color:aquamarine;
+    border-bottom: 15px solid black;
+    /* background-image: url("http://pipticker.com/wp-content/uploads/2016/07/pokeball-apple-watch-background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat; */
+    background-color: red;
 }
 
 .ability-container {
