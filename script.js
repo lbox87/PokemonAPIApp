@@ -87,9 +87,11 @@ function displaySprites(responseJson) {
 // }
 
 function displayAbilities(responseJson) {
+    // organizeMoves(responseJson);
+    // console.log(`${organizeMoves(responseJson)[0]}`);
     $('#pokemon-abilities').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
-        $('#pokemon-abilities').append(`<li class="col-6">${responseJson.moves[i].move.name}</li>`);
+        $('#pokemon-abilities').append(`<li class="col-6">${organizeMoves(responseJson)[i]}</li>`);
     };
 }
 
@@ -131,6 +133,17 @@ function displayDescription(responseJson){
     ${responseJson.effect_entries[0].short_effect}
     </span>`);
 }
+
+function organizeMoves(responseJson){
+    let pokemonMoves = [];
+    for (let i = 0; i < responseJson.moves.length; i++) {
+       pokemonMoves.push(`${responseJson.moves[i].move.name}`);
+    };
+    return pokemonMoves.sort();
+    // console.log(`${pokemonMoves}`);
+}
+
+
 
 $(searchForm);
 $(hoverMove);
