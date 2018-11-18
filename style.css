@@ -10,6 +10,23 @@ html {
     box-sizing:inherit;
 }
 
+* {
+    margin: 0px;
+}
+
+.header {
+    font-size: 15pt;
+    margin: 10px 0px 10px 0px;
+}
+
+h2, .move-description, label, li {
+    font-size: 11pt;
+}
+
+.move-description {
+    margin-top: 10px;
+}
+
 #sprites-list {
     margin: 0px;
     padding-left: 0px;

@@ -115,8 +115,8 @@ function getMove(query) {
 
 function displayDescription(responseJson){
     $('.move-description').html(`
-    <span class="col-12">
-    <h3>${responseJson.name}:</h3> 
+    <span class="move-description col-12">
+    <h2>${responseJson.name}:</h2> 
     ${responseJson.effect_entries[0].short_effect}
     </span>`);
 }
