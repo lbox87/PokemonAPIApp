@@ -5,7 +5,7 @@ const pokemonMove = 'https://pokeapi-215911.firebaseapp.com/api/v2/move/';
 
 // capture search term
 function searchForm() {
-    $('form').submit(event => {
+    $('#js-form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val().toLowerCase();
         getPokemon(searchTerm);
@@ -60,9 +60,9 @@ function displaySprites(responseJson) {
 
 // Display all moves of searched Pokemon
 function displayAbilities(responseJson) {
-    $('#pokemon-abilities').empty();
+    $('#js-pokemon-abilities').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
-        $('#pokemon-abilities').append(`<li class="col-6 pokemon-moves">${organizeMoves(responseJson)[i]}</li>`);
+        $('#js-pokemon-abilities').append(`<li class="col-6 pokemon-moves">${organizeMoves(responseJson)[i]}</li>`);
     };
 }
 
@@ -77,7 +77,7 @@ function organizeMoves(responseJson){
 
 // Event trigger hovering over moves
 function hoverMove() {
-    $('#pokemon-abilities').on('mouseenter', 'li', event => {
+    $('#js-pokemon-abilities').on('mouseenter', 'li', event => {
         const hoverTerm = event.target.textContent
         getMove(hoverTerm);
     });
