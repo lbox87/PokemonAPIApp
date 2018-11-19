@@ -21,7 +21,7 @@ function getPokemon(query) {
                 return response.json();
             }
             console.log(response);
-            if (response.statusText == ""){
+            if (response.statusText == "") {
                 throw new Error("Try Again");
             }
             throw new Error(response.statusText);
@@ -36,7 +36,7 @@ function getPokemon(query) {
 // Display results of Pokemon search GET
 function displayResults(responseJson) {
     nameSearched(responseJson);
-    displaySprites(responseJson);   
+    displaySprites(responseJson);
     displayAbilities(responseJson);
     $('.results').removeClass('hidden');
     // clear error
@@ -67,10 +67,10 @@ function displayAbilities(responseJson) {
 }
 
 // Organize moves alphabetically
-function organizeMoves(responseJson){
+function organizeMoves(responseJson) {
     let pokemonMoves = [];
     for (let i = 0; i < responseJson.moves.length; i++) {
-       pokemonMoves.push(`${responseJson.moves[i].move.name}`);
+        pokemonMoves.push(`${responseJson.moves[i].move.name}`);
     };
     return pokemonMoves.sort();
 }
@@ -103,12 +103,26 @@ function getMove(query) {
 }
 
 // Display move selected description
-function displayDescription(responseJson){
+function displayDescription(responseJson) {
     $('.move-description').html(`
     <p class="move-description col-12">
     <h2>${responseJson.name}:</h2> 
-    ${responseJson.effect_entries[0].short_effect}
+    ${correctMovePercentage(responseJson)}
     </p>`);
+}
+
+function correctMovePercentage(responseJson) {
+    // $effect_chance%
+    let moveEffect = responseJson.effect_entries[0].short_effect;
+    console.log(`GET effect is ${moveEffect}`);
+    console.log(`TRUE OR FALSE? ${moveEffect.includes("$effect_chance")}`);
+    let movePercentage = responseJson.effect_chance;
+    if (moveEffect.includes("$effect_chance")){
+        console.log(`${moveEffect} inside of if`);
+        moveEffect = moveEffect.replace("$effect_chance", `${movePercentage}`);
+    }
+    console.log(`${moveEffect} after if`);
+    return moveEffect;
 }
 
 function docReady() {
