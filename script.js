@@ -3,6 +3,7 @@
 const searchURL = 'https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/';
 const searchURL2 = 'https://pokeapi-215911.firebaseapp.com/api/v2/move/';
 
+// capture search term
 function searchForm() {
     $('form').submit(event => {
         event.preventDefault();
@@ -11,11 +12,9 @@ function searchForm() {
     });
 }
 
+// Pokemon search endpoint created, GET call to API
 function getPokemon(query) {
     const url = searchURL + query;
-
-    console.log(url);
-
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -34,15 +33,17 @@ function getPokemon(query) {
         });
 }
 
+// Display results of Pokemon search GET
 function displayResults(responseJson) {
-    console.log(responseJson);
     nameSearched(responseJson);
     displaySprites(responseJson);   
     displayAbilities(responseJson);
     $('.results').removeClass('hidden');
-    clearError();
+    // clear error
+    $('#js-error-message').html('');
 };
 
+// Format name searched with uppercase first letter
 function nameSearched(responseJson) {
     $('.name-searched').html(`${responseJson.name}`);
     let pokemonNameLower = responseJson.name;
@@ -50,13 +51,14 @@ function nameSearched(responseJson) {
     $('.name-searched').html(`${pokemonNameStyled}`);
 }
 
+// Display pictures of searched Pokemon
 function displaySprites(responseJson) {
-
     $('#sprites-list').empty();
     $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.front_default}" alt=""></li>`);
     $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.back_default}" alt=""></li>`);
 }
 
+// Display all moves of searched Pokemon
 function displayAbilities(responseJson) {
     $('#pokemon-abilities').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
@@ -64,6 +66,16 @@ function displayAbilities(responseJson) {
     };
 }
 
+// Organize moves alphabetically
+function organizeMoves(responseJson){
+    let pokemonMoves = [];
+    for (let i = 0; i < responseJson.moves.length; i++) {
+       pokemonMoves.push(`${responseJson.moves[i].move.name}`);
+    };
+    return pokemonMoves.sort();
+}
+
+// Event trigger hovering over moves
 function hoverMove() {
     $('#pokemon-abilities').on('mouseenter', 'li', event => {
         const hoverTerm = event.target.textContent
@@ -71,11 +83,10 @@ function hoverMove() {
     });
 }
 
+// Move search endpoint created, GET call to API
 function getMove(query) {
     const url = searchURL2 + query;
-
     console.log(url);
-
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -91,6 +102,7 @@ function getMove(query) {
         });
 }
 
+// Display move selected description
 function displayDescription(responseJson){
     $('.move-description').html(`
     <p class="move-description col-12">
@@ -99,23 +111,9 @@ function displayDescription(responseJson){
     </p>`);
 }
 
-function organizeMoves(responseJson){
-    let pokemonMoves = [];
-    for (let i = 0; i < responseJson.moves.length; i++) {
-       pokemonMoves.push(`${responseJson.moves[i].move.name}`);
-    };
-    return pokemonMoves.sort();
-}
-
 function docReady() {
     searchForm();
     hoverMove();
 }
 
 $(docReady);
-// $(searchForm);
-// $(hoverMove);
-
-function clearError() {
-    $('#js-error-message').html('');
-}
