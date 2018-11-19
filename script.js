@@ -37,7 +37,7 @@ function getPokemon(query) {
 function displayResults(responseJson) {
     nameSearched(responseJson);
     displaySprites(responseJson);
-    displayAbilities(responseJson);
+    displayMoves(responseJson);
     $('.results').removeClass('hidden');
     // clear error
     $('#js-error-message').html('');
@@ -59,10 +59,10 @@ function displaySprites(responseJson) {
 }
 
 // Display all moves of searched Pokemon
-function displayAbilities(responseJson) {
-    $('#js-pokemon-abilities').empty();
+function displayMoves(responseJson) {
+    $('#js-pokemon-moves').empty();
     for (let i = 0; i < responseJson.moves.length; i++) {
-        $('#js-pokemon-abilities').append(`<li class="col-6 pokemon-moves">${organizeMoves(responseJson)[i]}</li>`);
+        $('#js-pokemon-moves').append(`<li class="col-6 pokemon-moves">${organizeMoves(responseJson)[i]}</li>`);
     };
 }
 
@@ -77,7 +77,7 @@ function organizeMoves(responseJson) {
 
 // Event trigger hovering over moves
 function hoverMove() {
-    $('#js-pokemon-abilities').on('mouseenter', 'li', event => {
+    $('#js-pokemon-moves').on('mouseenter', 'li', event => {
         const hoverTerm = event.target.textContent
         getMove(hoverTerm);
     });

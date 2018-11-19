@@ -28,7 +28,7 @@ h2, .move-description, label, li, .error-message {
     border: dotted .5px black;
 }
 
-.pokemon-abilities{
+.pokemon-moves-ul{
     list-style-type: none;
 }
 
@@ -54,7 +54,7 @@ h2, .move-description, label, li, .error-message {
     background-color: red;
 }
 
-.ability-container {
+.moves-container {
     position: absolute;
     top: 50%;
     margin-top: 20px;
@@ -62,7 +62,7 @@ h2, .move-description, label, li, .error-message {
     overflow:auto;
 }
 
-.ability-container, .fixed-container {
+.moves-container, .fixed-container {
     width: 100%;
     left:50%;
     transform: translate(-50%, 0);
