@@ -32,7 +32,7 @@ h2, .move-description, label, li, .error-message {
     border: dotted .5px black;
 }
 
-#pokemon-abilities{
+.pokemon-abilities{
     list-style-type: none;
 }
 
