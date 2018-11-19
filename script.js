@@ -1,7 +1,7 @@
 'use strict';
 
-const searchURL = 'https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/';
-const searchURL2 = 'https://pokeapi-215911.firebaseapp.com/api/v2/move/';
+const pokemonEndpoint = 'https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/';
+const pokemonMove = 'https://pokeapi-215911.firebaseapp.com/api/v2/move/';
 
 // capture search term
 function searchForm() {
@@ -14,7 +14,7 @@ function searchForm() {
 
 // Pokemon search endpoint created, GET call to API
 function getPokemon(query) {
-    const url = searchURL + query;
+    const url = pokemonEndpoint + query;
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -85,7 +85,7 @@ function hoverMove() {
 
 // Move search endpoint created, GET call to API
 function getMove(query) {
-    const url = searchURL2 + query;
+    const url = pokemonMove + query;
     console.log(url);
     fetch(url)
         .then(response => {
