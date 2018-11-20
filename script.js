@@ -12,7 +12,7 @@ function searchForm() {
     });
 }
 
-// Pokemon search endpoint created, GET call to API
+// "Pokemon" search endpoint created, GET call to API
 function getPokemon(query) {
     const url = pokemonEndpoint + query;
     fetch(url)
@@ -75,7 +75,7 @@ function organizeMoves(responseJson) {
     return pokemonMoves.sort();
 }
 
-// Event trigger hovering over moves
+// Capture move name when hovered over
 function hoverMove() {
     $('#js-pokemon-moves').on('mouseenter', 'li', event => {
         const hoverTerm = event.target.textContent
@@ -83,7 +83,7 @@ function hoverMove() {
     });
 }
 
-// Move search endpoint created, GET call to API
+// "Move" search endpoint created, GET call to API
 function getMove(query) {
     const url = moveEndpoint + query;
     console.log(url);
@@ -102,7 +102,7 @@ function getMove(query) {
         });
 }
 
-// Display move selected description
+// Display move description
 function displayDescription(responseJson) {
     $('.move-description').html(`
     <p class="move-description col-12">
