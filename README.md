@@ -10,6 +10,7 @@
 <p>A description of the move will be displayed whenever you hover over or select the move.</p>
 <div><img src="https://user-images.githubusercontent.com/23705300/48809448-45105200-ecea-11e8-85ef-fcec5436a863.png"></div>
 
+<h2>Built With</h2>
 <p>This app uses HTML, CSS, JavaScript, and JQuery. References API https://pokeapi.co</p>
 
 <p>This app was created as part of an assignment through Thinkful to learn about APIs.</p>
