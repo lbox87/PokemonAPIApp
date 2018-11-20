@@ -1,5 +1,6 @@
 <h1>What Moves Can My Pokemon Learn!?</h1>
-<a href="https://lbox87.github.io/What-Moves-Can-My-Pokemon-Learn/">Live Link</a>
+<a href="https://lbox87.github.io/What-Moves-Can-My-Pokemon-Learn/">App Live Link</a>
+
 <div><img src="https://user-images.githubusercontent.com/23705300/48809298-ad126880-ece9-11e8-8c9e-533b24bdd891.png"></div>
 
 <h2>What does it do?</h2>
