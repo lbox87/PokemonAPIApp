@@ -8,15 +8,16 @@ html {
 
 * {
     margin: 0px;
+    font-family: 'VT323', monospace;
 }
 
 .header {
-    font-size: 15pt;
+    font-size: 17pt;
     margin: 10px 0px 10px 0px;
 }
 
 h2, .move-description, label, li, .error-message {
-    font-size: 11pt;
+    font-size: 13pt;
 }
 
 .move-description, .error-message {
