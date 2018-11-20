@@ -54,8 +54,8 @@ function nameSearched(responseJson) {
 // Display pictures of searched Pokemon
 function displaySprites(responseJson) {
     $('#sprites-list').empty();
-    $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.front_default}" alt=""></li>`);
-    $('#sprites-list').append(`<li><img id="spites" src="${responseJson.sprites.back_default}" alt=""></li>`);
+    $('#sprites-list').append(`<li><img id="sprites" src="${responseJson.sprites.front_default}" alt=""></li>`);
+    $('#sprites-list').append(`<li><img id="sprites" src="${responseJson.sprites.back_default}" alt=""></li>`);
 }
 
 // Display all moves of searched Pokemon
