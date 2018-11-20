@@ -30,6 +30,7 @@ h2, .move-description, label, li, .error-message {
 
 .pokemon-moves-ul{
     list-style-type: none;
+    padding: 0px;
 }
 
 #sprites-list {
