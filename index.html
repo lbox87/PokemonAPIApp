@@ -4,22 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="What Moves Can My Pokemon Learn!?" content="What Moves Can My Pokemon Learn!?">
-
     <title>What Moves Can My Pokemon Learn!?</title>
-
     <!-- stylesheets -->
     <link href="float-grid.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
     <!-- normalize -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    
     <!-- responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- jQuery and js scripts -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="script.js"></script>
@@ -29,7 +23,6 @@
     <main role="main">
         <div class="row fixed-container">
             <h2 class="col-12 header">What Moves Can My Pokemon Learn!?</h2>
-
             <form id="js-form" class="col-12">
                 <label for="search-term">Search for Your Pokemon by Name or Number!</label><br>
                 <input type="text" name="search-term" id="js-search-term" placeholder="ex. Pikachu or 25" required>
@@ -37,7 +30,7 @@
             </form>
 
             <p id="js-error-message" class="col-12 error-message"></p>
-
+            
             <section class="col-12 results hidden">
                 <ul id="sprites-list"></ul>
                 <h2>Hover over or select one of <span class="name-searched"></span>'s moves to learn more about it.</h2>
@@ -47,7 +40,7 @@
 
         <div class="row moves-container">
             <section class="col-12 results hidden">
-                <ul id="js-pokemon-moves" class="pokemon-moves-ul">  
+                <ul id="js-pokemon-moves" class="pokemon-moves-ul">
                 </ul>
             </section>
         </div>

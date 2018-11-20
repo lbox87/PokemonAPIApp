@@ -115,7 +115,7 @@ function displayDescription(responseJson) {
 function correctMovePercentage(responseJson) {
     let moveEffect = responseJson.effect_entries[0].short_effect;
     let movePercentage = responseJson.effect_chance;
-    if (moveEffect.includes("$effect_chance")){
+    if (moveEffect.includes("$effect_chance")) {
         moveEffect = moveEffect.replace("$effect_chance", `${movePercentage}`);
     }
     return moveEffect;
