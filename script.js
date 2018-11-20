@@ -111,7 +111,8 @@ function displayDescription(responseJson) {
     </p>`);
 }
 
-// API returns "$effect_chance" in move description instead of the actual percentage, this corrects based on the percentage listed in the response.
+// API returns "$effect_chance" in move description instead of the actual percentage, 
+// this corrects based on the percentage listed in the response.
 function correctMovePercentage(responseJson) {
     let moveEffect = responseJson.effect_entries[0].short_effect;
     let movePercentage = responseJson.effect_chance;
